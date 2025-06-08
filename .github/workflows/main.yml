@@ -5,11 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - name: Set a variable step
+        id: set-a-variable
+        run: |
+          greet_name=Marcelo Jimenez
+          echo "greet_name=$greet_name" >> "$GITHUB_OUTPUT"
       - name: Hello world action step
         id: hello
         uses: mrjimenez/action-javascript-hello-world@v1.2
         with:
-          who-to-greet: 'Mona the Octocat'
+          # who-to-greet: 'Mona the Octocat'
+          who-to-greet: ${{ steps.set-a-variable.outputs.greet_name }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
