@@ -35,11 +35,11 @@ ncc build index.js --license licenses.txt
 
 ## Readme Template
 
-#### Hello world javascript action
+### Hello world javascript action
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
-##### Inputs
+#### Inputs
 
 ### `who-to-greet`
 
