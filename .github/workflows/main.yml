@@ -8,7 +8,7 @@ jobs:
       - name: Set a variable step
         id: set-a-variable
         run: |
-          greet_name=Marcelo Jimenez
+          greet_name="Marcelo Jimenez"
           echo "greet_name=$greet_name" >> "$GITHUB_OUTPUT"
       - name: Hello world action step
         id: hello
